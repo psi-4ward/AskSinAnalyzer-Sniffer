@@ -25,9 +25,13 @@ Benötigte Bibliotheken: `AskSinPP`, `Low-Power`, `EnableInterrupt` und bei Verw
 
 ### avrdude
 
-Direktes Flashen der HEX-Datei über avrdude für einen 328P:
+Direktes Flashen der HEX-Datei über avrdude.  
+Die Firmware kann unter [Releases](https://github.com/psi-4ward/AskSinAnalyzer-Sniffer/releases/latest)
+heruntergeladen werden. Die Parameter wie Port und Datei sind entsprechend anzupassen. 
+
 ```bash
-avrdude -patmega328p -carduino -P/dev/ttyUSB0 -b57600 -D -Uflash:w:AskSinSniffer328P.hex:i
+# Pro-Mini
+avrdude -patmega328p -carduino -P/dev/ttyUSB0 -b57600 -D -Uflash:w:pro-mini.hex:i
 ```
 
 ### PlatformIO
