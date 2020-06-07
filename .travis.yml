@@ -1,0 +1,24 @@
+language: python
+python:
+  - "3.8"
+
+before_script:
+  - pip install -U platformio
+  - platformio update
+
+script:
+  - platformio run -e pro-mini -e pro-mini-oled -e nano -e nano-oled
+
+before_deploy:
+  - for i in pro-mini pro-mini-oled nano nano-oled ; do cp .pio/build/$i/firmware.hex $TRAVIS_BUILD_DIR/$i.hex ; done
+  - cd $TRAVIS_BUILD_DIR
+
+deploy:
+  provider: releases
+  token: $GH_TOKEN
+  file_glob: true
+  file: ./*.hex
+  skip_cleanup: true
+  overwrite: true
+  on:
+    tags: true
