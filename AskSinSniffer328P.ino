@@ -4,6 +4,13 @@
 // 2019-05-24 jp112sdl Creative Commons - http://creativecommons.org/licenses/by-nc-sa/3.0/de/
 //- -----------------------------------------------------------------------------------------------------------------------
 
+// Arduino Nano has LED on PIN 8
+// #define USE_LED_PIN_8
+
+// Enable th 0.91" 128x32 OLED display
+// #define USE_OLED
+
+
 #include <SPI.h>
 #define EI_NOTEXTERNAL
 #include <EnableInterrupt.h>
@@ -12,7 +19,7 @@
 #include <Register.h>
 
 #ifdef USE_OLED
-#include "Ssd1306.h"  // comment out if you use a 0.91" 128x32 OLED display
+#include "Ssd1306.h"
 #endif
 
 #ifdef USE_LED_PIN_8
