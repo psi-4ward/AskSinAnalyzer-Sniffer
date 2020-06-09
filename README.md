@@ -10,10 +10,10 @@ anzuzeigen. Eine dynamische Pegelanzeige ist ebenfalls implementiert, um Ändere
 
 Zudem wird der Arduino Nano unterstützt.
 
-![AskSin-Analyzer Pegel](https://github.com/der-pw/AskSinAnalyzer/blob/master/Images/Sniffer_Display.jpg "AskSin-Analyzer Pegel")
-
 * **Bei Verwendung des Arduino Nano wird der LED-PIN `8` verwendet** (PCB von TomMajor).
 * Für den Pro-Mini wird die LED auf PIN `4` angenommen. Ggf. ist dies im Sketch anzupassen.
+
+![AskSin-Analyzer Pegel](https://github.com/der-pw/AskSinAnalyzer/blob/master/Images/Sniffer_Display.jpg "AskSin-Analyzer Pegel")
 
 ## Flashen
 
@@ -23,7 +23,7 @@ Eine Anpassung der `DeviceInfo` Konfiguration ist **nicht** notwendig, da der Sn
 
 ### Arduino IDE
 
-Benötigte Bibliotheken: `AskSinPP`, `Low-Power`, `EnableInterrupt` und bei Verwendung des OLED-Displays `Adafruit GFX Library` und `Adafruit SSD1306`. **Der LED-PIN (default 4) und die Unterstützung des OLED-Display (default aus) muss ggf. im Sketch angepasst werden.
+Benötigte Bibliotheken: `AskSinPP`, `Low-Power`, `EnableInterrupt` und bei Verwendung des OLED-Displays `Adafruit GFX Library` und `Adafruit SSD1306`. **Der LED-PIN (default 4) und die Unterstützung des OLED-Display (default aus) muss ggf. im Sketch angepasst werden.**
 
 ### avrdude
 
