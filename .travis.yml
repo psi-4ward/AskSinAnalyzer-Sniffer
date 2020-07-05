@@ -7,9 +7,11 @@ before_script:
   - platformio update
 
 script:
+  - cd Sniffer
   - platformio run -e pro-mini -e pro-mini-oled -e nano -e nano-oled
 
 before_deploy:
+  - cd Sniffer
   - for i in pro-mini pro-mini-oled nano nano-oled ; do cp .pio/build/$i/firmware.hex $TRAVIS_BUILD_DIR/$i.hex ; done
   - cd $TRAVIS_BUILD_DIR
 

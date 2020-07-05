@@ -4,9 +4,6 @@
 // 2019-05-24 jp112sdl Creative Commons - http://creativecommons.org/licenses/by-nc-sa/3.0/de/
 //- -----------------------------------------------------------------------------------------------------------------------
 
-// Arduino Nano has LED on PIN 8
-// #define USE_LED_PIN_8
-
 // Enable th 0.91" 128x32 OLED display
 // #define USE_OLED
 
@@ -22,10 +19,9 @@
 #include "Ssd1306.h"
 #endif
 
-#ifdef USE_LED_PIN_8
-#define STATUS_LED 8
-#else
-#define STATUS_LED 4
+#ifndef LED_PIN
+#define LED_PIN 4
+// Arduino Nano has LED on PIN 8
 #endif
 
 #ifdef SSD1306_H_
@@ -48,7 +44,7 @@ const struct DeviceInfo PROGMEM devinfo = {
   {0x00, 0x00}            // Info Bytes
 };
 
-typedef AskSin<StatusLed<STATUS_LED>, NoBattery, Radio<LibSPI<10>, 2>> HalType;
+typedef AskSin<StatusLed<LED_PIN>, NoBattery, Radio<LibSPI<10>, 2>> HalType;
 
 class SnifferDevice : public Device<HalType, DefList0>, Alarm {
   DefList0 l0;
