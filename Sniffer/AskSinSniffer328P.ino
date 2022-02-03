@@ -17,6 +17,7 @@
 
 #ifdef USE_OLED
 #include "Ssd1306.h"
+#include <Adafruit_I2CDevice.h>
 #endif
 
 #ifndef LED_PIN
