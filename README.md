@@ -37,6 +37,13 @@ Für den Pro-Mini ist ENV der LED-PIN `4` gesetzt, für den Nano `8`.
 avrdude -patmega328p -carduino -P/dev/ttyUSB0 -b57600 -D -Uflash:w:pro-mini.hex:i
 ```
 
+Unter Windows könnte der Aufruf wiefolgt aussehen:
+```shell
+cd Downloads
+"C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude" –C"C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf" -v -patmega328p -carduino -PCOM4 -b115200 -D -Uflash:w:nano-oled.hex:i
+```
+Dabei muss der `-PCOM4` Port und die Firmware `nano-oled.hex` (Datei und Pfad) entsprechend angepasst werden.
+
 ### PlatformIO
 
 Dem Projekt liegt eine `platformio.ini` bei. Für den Pro-Mini ist per ENV der LED-PIN `4` gesetzt, für den Nano `8`.
